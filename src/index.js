@@ -76,8 +76,12 @@ app.post('/tasks', (request, response) => {
     const today = new Date()
 
     const task = { id: generateId(), title: request.body.title, created_on: today, fulfilled_on: null, author: request.session.email }
-    tasks = [...tasks, task]
-    response.sendStatus(201)
+    if (task.title === '' || task.title == null) {
+      response.send(406).json({ error: 'Not Acceptable' })
+    } else {
+      tasks = [...tasks, task]
+      response.sendStatus(201)
+    }
   } else {
     response.status(403).json({ error: 'Not Logged In' })
   }
@@ -98,6 +102,7 @@ app.put('/tasks/:id', (request, response) => {
       const authors = task.author + ' , ' + request.session.email
       const index = tasks.findIndex((t) => t.id === task.id)
       const newTask = { id: task.id, title: request.body.title, created_on: task.created_on, fullfilled_on: task.fulfilled_on, author: authors }
+
       tasks[index] = newTask
       response.status(202).json(newTask)
     } else {

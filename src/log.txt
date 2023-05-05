@@ -1,0 +1,17 @@
+commit ed346378ec20c7487522d72468a82754caef6037
+Author: Nils Fischer <fischern@bzz.ch>
+Date:   Fri May 5 14:18:26 2023 +0000
+
+    initialised login and added eslint
+
+commit 2e38efff532329237f0816d2eebd277aa93b6dc2
+Author: Nils Fischer <fischern@bzz.ch>
+Date:   Fri May 5 10:03:44 2023 +0000
+
+    main requirements implemented
+
+commit 5536c51d9ff3bda754ac02f5d293ab123a24e043
+Author: Nils Fischer <fischern@bzz.ch>
+Date:   Fri May 5 06:41:55 2023 +0000
+
+    first commit
